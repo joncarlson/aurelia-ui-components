@@ -54,6 +54,9 @@
   "jspm": {
     "main": "index",
     "format": "amd",
+    "directories": {
+      "lib": "dist/amd"
+    },
     "files": ["dist/amd/**/*"],
     "dependencies": {}
   }
