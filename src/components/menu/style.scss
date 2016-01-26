@@ -1,0 +1,23 @@
+.push-when-menu-open {
+    padding-left: 0;
+    transition: padding .15s ease-in-out;
+
+    &.menu-open {
+        padding-left: em(300px);
+    }
+}
+
+.menu {
+    &--side {
+        @include transform(translate3d(-100%, 0, 0));
+
+        position: fixed;
+        transition: transform .15s ease-in-out;
+        top: 0; left: 0;
+        width: em(300px);
+
+        &.open {
+            @include transform(translate3d(0, 0, 0));
+        }
+    }
+}
