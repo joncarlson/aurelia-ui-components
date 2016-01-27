@@ -19,7 +19,7 @@ define(['exports', './components/menu/menu', './components/menu/menu-item', './c
     _defaults(exports, _interopExportWildcard(_componentsMenuPushWhenMenuOpen, _defaults));
 
     function configure(config, callback) {
-        config.globalResources('./components/menu/menu', './components/menu/menu-item', './components/menu/menu-toggle', './components/menu/push-when-menu-open');
+        config.globalResources('./components/menu/menu', './components/menu/menu-items', './components/menu/menu-item', './components/menu/menu-toggle', './components/menu/push-when-menu-open');
 
         if (typeof callback === 'function') {
             callback();

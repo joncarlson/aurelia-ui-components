@@ -9,15 +9,42 @@
 
 .menu {
     &--side {
+        @include display(flex);
+        @include flex-direction(column);
         @include transform(translate3d(-100%, 0, 0));
 
         position: fixed;
         transition: transform .15s ease-in-out;
-        top: 0; left: 0;
+        top: 0;
+        left: 0;
         width: em(300px);
+        height: 100%;
 
         &.open {
             @include transform(translate3d(0, 0, 0));
+        }
+    }
+
+    &__items {
+        @include flex(1);
+
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        .menu__items {
+            @include flex(none);
+        }
+    }
+
+    &__item {
+        display: block;
+        position: relative;
+
+        a {
+            display: block;
+            padding: em(14px) 0 em(14px) em(94px);
+            text-decoration: none;
         }
     }
 }

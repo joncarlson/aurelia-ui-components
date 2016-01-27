@@ -1,0 +1,11 @@
+<template>
+    <menu>
+        <menu-items>
+            <menu-item repeat.for="link of links" item.bind="link"></menu-item>
+        </menu-items>
+    </menu>
+
+    <section class="content content--main" push-when-menu-open>
+        <menu-toggle>Toggle Menu</menu-toggle>
+    </section>
+</template>

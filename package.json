@@ -21,12 +21,14 @@
   },
   "scripts": {
     "build": "node_modules/gulp/bin/gulp.js build",
+    "watch": "node_modules/gulp/bin/gulp.js watch",
     "release": "node_modules/gulp/bin/gulp.js prepare-release"
   },
   "devDependencies": {
     "aurelia-tools": "^0.1.3",
     "babel-eslint": "^4.1.3",
     "bourbon": "^4.2.6",
+    "browser-sync": "^2.11.1",
     "conventional-changelog": "0.0.11",
     "del": "^1.1.0",
     "gulp": "^3.9.0",
@@ -57,7 +59,9 @@
     "directories": {
       "lib": "dist/amd"
     },
-    "files": ["dist/amd/**/*"],
+    "files": [
+      "dist/amd/**/*"
+    ],
     "dependencies": {}
   }
 }

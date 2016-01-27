@@ -18,32 +18,14 @@ var MenuItem = (function () {
     function MenuItem() {
         _classCallCheck(this, _MenuItem);
 
-        _defineDecoratedPropertyDescriptor(this, 'title', _instanceInitializers);
-
-        _defineDecoratedPropertyDescriptor(this, 'iconClass', _instanceInitializers);
-
-        _defineDecoratedPropertyDescriptor(this, 'url', _instanceInitializers);
+        _defineDecoratedPropertyDescriptor(this, 'item', _instanceInitializers);
     }
 
     _createDecoratedClass(MenuItem, [{
-        key: 'title',
+        key: 'item',
         decorators: [_aureliaFramework.bindable],
         initializer: function initializer() {
-            return '';
-        },
-        enumerable: true
-    }, {
-        key: 'iconClass',
-        decorators: [_aureliaFramework.bindable],
-        initializer: function initializer() {
-            return '';
-        },
-        enumerable: true
-    }, {
-        key: 'url',
-        decorators: [_aureliaFramework.bindable],
-        initializer: function initializer() {
-            return '#';
+            return {};
         },
         enumerable: true
     }], null, _instanceInitializers);

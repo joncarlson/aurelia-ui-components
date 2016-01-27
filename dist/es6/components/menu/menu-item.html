@@ -1,12 +1,12 @@
 <template>
     <li class="menu__item">
-        <i class.bind="iconClass"></i>
-        <a class="menu__link" href.bind="url">
-            ${title}
+        <i class.bind="item.iconClass"></i>
+        <a class="menu__link" href.bind="item.url">
+            ${item.title}
         </a>
 
-        <ul>
-            <content></content>
-        </ul>
+        <menu-items>
+            <menu-item repeat.for="link of item.links" item.bind="link"></menu-item>
+        </menu-items>
     </li>
 </template>

@@ -61,7 +61,8 @@ gulp.task('build-css', function() {
     .pipe(gulp.dest(paths.output + 'commonjs'))
     .pipe(gulp.dest(paths.output + 'amd'))
     .pipe(gulp.dest(paths.output + 'system'))
-    .pipe(gulp.dest(paths.output + 'es6'));
+    .pipe(gulp.dest(paths.output + 'es6'))
+    .pipe(gulp.dest(paths.example))
 });
 
 
