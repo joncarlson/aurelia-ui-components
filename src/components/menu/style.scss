@@ -40,15 +40,11 @@
     &__item {
         display: block;
         position: relative;
-
-        a {
-            display: block;
-            padding: em(14px) 0 em(14px) em(94px);
-            text-decoration: none;
-        }
     }
 
     &__link {
+        display: block;
         padding: em(15px) 0 em(15px) em(54px);
+        text-decoration: none;
     }
 }
