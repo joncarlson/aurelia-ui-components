@@ -14,7 +14,7 @@ define(['exports', 'aurelia-framework', 'aurelia-event-aggregator'], function (e
             _classCallCheck(this, _MenuToggle);
 
             this.events = events;
-            this.open = false;
+            this.open = window.innerWidth > 768;
         }
 
         _createClass(MenuToggle, [{

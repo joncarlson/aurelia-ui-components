@@ -1,0 +1,8 @@
+<template>
+	<a href="javascript:;" click.trigger="toggle()">
+		<i class="fa fa-bars">i</i>
+	</a>
+	<div class="tooltip" class.bind="showing ? 'showing' : ''" click.trigger="toggle()">
+        <content></content>
+	</div>
+</template>

@@ -1,21 +1,30 @@
-define(['exports'], function (exports) {
+define(['exports', './components/menu/menu', './components/menu/menu-item', './components/menu/menu-toggle', './components/menu/push-when-menu-open', './components/tooltip/tooltip'], function (exports, _componentsMenuMenu, _componentsMenuMenuItem, _componentsMenuMenuToggle, _componentsMenuPushWhenMenuOpen, _componentsTooltipTooltip) {
     'use strict';
 
     Object.defineProperty(exports, '__esModule', {
         value: true
     });
     exports.configure = configure;
-    var components = {
-        menu: ['./components/menu/menu', './components/menu/menu-items', './components/menu/menu-item', './components/menu/menu-toggle', './components/menu/push-when-menu-open']
-    };
 
-    function configure(config) {
-        var includes = arguments.length <= 1 || arguments[1] === undefined ? [] : arguments[1];
+    function _interopExportWildcard(obj, defaults) { var newObj = defaults({}, obj); delete newObj['default']; return newObj; }
 
-        if (!includes.length) includes = Object.keys(components);
+    function _defaults(obj, defaults) { var keys = Object.getOwnPropertyNames(defaults); for (var i = 0; i < keys.length; i++) { var key = keys[i]; var value = Object.getOwnPropertyDescriptor(defaults, key); if (value && value.configurable && obj[key] === undefined) { Object.defineProperty(obj, key, value); } } return obj; }
 
-        config.globalResources(includes.reduce(function (resources, key) {
-            return resources.concat(components[key]);
-        }, []));
+    _defaults(exports, _interopExportWildcard(_componentsMenuMenu, _defaults));
+
+    _defaults(exports, _interopExportWildcard(_componentsMenuMenuItem, _defaults));
+
+    _defaults(exports, _interopExportWildcard(_componentsMenuMenuToggle, _defaults));
+
+    _defaults(exports, _interopExportWildcard(_componentsMenuPushWhenMenuOpen, _defaults));
+
+    _defaults(exports, _interopExportWildcard(_componentsTooltipTooltip, _defaults));
+
+    function configure(config, callback) {
+        config.globalResources('./components/menu/menu', './components/menu/menu-items', './components/menu/menu-item', './components/menu/menu-toggle', './components/menu/push-when-menu-open', './components/tooltip/tooltip');
+
+        if (typeof callback === 'function') {
+            callback();
+        }
     }
 });

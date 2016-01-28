@@ -4,7 +4,9 @@ let components = {
         './components/menu/menu-items',
         './components/menu/menu-item',
         './components/menu/menu-toggle',
-        './components/menu/push-when-menu-open',
+        './components/menu/push-when-menu-open'],
+    tooltip: [
+        './components/tooltip/tooltip'
     ]
 }
 
