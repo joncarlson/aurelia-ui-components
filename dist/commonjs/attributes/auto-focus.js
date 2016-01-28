@@ -10,37 +10,24 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 var _aureliaFramework = require('aurelia-framework');
 
-var _aureliaEventAggregator = require('aurelia-event-aggregator');
+var AutoFocus = (function () {
+    function AutoFocus(element) {
+        _classCallCheck(this, _AutoFocus);
 
-var MenuToggle = (function () {
-    function MenuToggle(events) {
-        _classCallCheck(this, _MenuToggle);
-
-        this.events = events;
-        this.open = false;
+        this.element = element;
     }
 
-    _createClass(MenuToggle, [{
-        key: 'toggle',
-        value: function toggle() {
-            this.open = !this.open;
-        }
-    }, {
-        key: 'open',
-        get: function get() {
-            return this._open;
-        },
-        set: function set(open) {
-            this._open = open;
-
-            this.events.publish('menu:toggle-open', this._open);
+    _createClass(AutoFocus, [{
+        key: 'attached',
+        value: function attached() {
+            this.element.focus();
         }
     }]);
 
-    var _MenuToggle = MenuToggle;
-    MenuToggle = (0, _aureliaFramework.inject)(_aureliaEventAggregator.EventAggregator)(MenuToggle) || MenuToggle;
-    MenuToggle = (0, _aureliaFramework.containerless)()(MenuToggle) || MenuToggle;
-    return MenuToggle;
+    var _AutoFocus = AutoFocus;
+    AutoFocus = (0, _aureliaFramework.inject)(Element)(AutoFocus) || AutoFocus;
+    AutoFocus = (0, _aureliaFramework.customAttribute)('auto-focus')(AutoFocus) || AutoFocus;
+    return AutoFocus;
 })();
 
-exports.MenuToggle = MenuToggle;
+exports.AutoFocus = AutoFocus;

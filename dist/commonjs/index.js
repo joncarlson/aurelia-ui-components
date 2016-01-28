@@ -5,6 +5,7 @@ Object.defineProperty(exports, '__esModule', {
 });
 exports.configure = configure;
 var components = {
+    attributes: ['./attributes/auto-focus'],
     menu: ['./components/menu/menu', './components/menu/menu-items', './components/menu/menu-item', './components/menu/menu-toggle', './components/menu/push-when-menu-open']
 };
 
