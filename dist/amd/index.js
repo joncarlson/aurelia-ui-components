@@ -1,4 +1,4 @@
-define(['exports', './components/menu/menu', './components/menu/menu-item', './components/menu/menu-toggle', './components/menu/push-when-menu-open'], function (exports, _componentsMenuMenu, _componentsMenuMenuItem, _componentsMenuMenuToggle, _componentsMenuPushWhenMenuOpen) {
+define(['exports', './components/menu/menu', './components/menu/menu-item', './components/menu/menu-toggle', './components/menu/push-when-menu-open', './components/tooltip/tooltip'], function (exports, _componentsMenuMenu, _componentsMenuMenuItem, _componentsMenuMenuToggle, _componentsMenuPushWhenMenuOpen, _componentsTooltipTooltip) {
     'use strict';
 
     Object.defineProperty(exports, '__esModule', {
@@ -18,8 +18,10 @@ define(['exports', './components/menu/menu', './components/menu/menu-item', './c
 
     _defaults(exports, _interopExportWildcard(_componentsMenuPushWhenMenuOpen, _defaults));
 
+    _defaults(exports, _interopExportWildcard(_componentsTooltipTooltip, _defaults));
+
     function configure(config, callback) {
-        config.globalResources('./components/menu/menu', './components/menu/menu-items', './components/menu/menu-item', './components/menu/menu-toggle', './components/menu/push-when-menu-open');
+        config.globalResources('./components/menu/menu', './components/menu/menu-items', './components/menu/menu-item', './components/menu/menu-toggle', './components/menu/push-when-menu-open', './components/tooltip/tooltip');
 
         if (typeof callback === 'function') {
             callback();

@@ -25,8 +25,12 @@ var _componentsMenuPushWhenMenuOpen = require('./components/menu/push-when-menu-
 
 _defaults(exports, _interopExportWildcard(_componentsMenuPushWhenMenuOpen, _defaults));
 
+var _componentsTooltipTooltip = require('./components/tooltip/tooltip');
+
+_defaults(exports, _interopExportWildcard(_componentsTooltipTooltip, _defaults));
+
 function configure(config, callback) {
-    config.globalResources('./components/menu/menu', './components/menu/menu-items', './components/menu/menu-item', './components/menu/menu-toggle', './components/menu/push-when-menu-open');
+    config.globalResources('./components/menu/menu', './components/menu/menu-items', './components/menu/menu-item', './components/menu/menu-toggle', './components/menu/push-when-menu-open', './components/tooltip/tooltip');
 
     if (typeof callback === 'function') {
         callback();

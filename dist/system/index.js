@@ -1,10 +1,10 @@
-System.register(['./components/menu/menu', './components/menu/menu-item', './components/menu/menu-toggle', './components/menu/push-when-menu-open'], function (_export) {
+System.register(['./components/menu/menu', './components/menu/menu-item', './components/menu/menu-toggle', './components/menu/push-when-menu-open', './components/tooltip/tooltip'], function (_export) {
     'use strict';
 
     _export('configure', configure);
 
     function configure(config, callback) {
-        config.globalResources('./components/menu/menu', './components/menu/menu-items', './components/menu/menu-item', './components/menu/menu-toggle', './components/menu/push-when-menu-open');
+        config.globalResources('./components/menu/menu', './components/menu/menu-items', './components/menu/menu-item', './components/menu/menu-toggle', './components/menu/push-when-menu-open', './components/tooltip/tooltip');
 
         if (typeof callback === 'function') {
             callback();
@@ -27,6 +27,10 @@ System.register(['./components/menu/menu', './components/menu/menu-item', './com
         }, function (_componentsMenuPushWhenMenuOpen) {
             for (var _key4 in _componentsMenuPushWhenMenuOpen) {
                 if (_key4 !== 'default') _export(_key4, _componentsMenuPushWhenMenuOpen[_key4]);
+            }
+        }, function (_componentsTooltipTooltip) {
+            for (var _key5 in _componentsTooltipTooltip) {
+                if (_key5 !== 'default') _export(_key5, _componentsTooltipTooltip[_key5]);
             }
         }],
         execute: function () {}
