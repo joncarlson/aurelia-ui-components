@@ -16,5 +16,8 @@
   },
   "devDependencies": {
     "jspm": "^0.16.6"
+  },
+  "scripts": {
+    "postinstall": "jspm install"
   }
 }

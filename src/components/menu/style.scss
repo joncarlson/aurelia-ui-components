@@ -5,6 +5,13 @@
     &.menu-open {
         padding-left: em(388px);
     }
+
+    @media (min-width: 769px) {
+        &,
+        &.menu-open {
+            padding-left: em(388px);
+        }
+    }
 }
 
 .menu {
@@ -22,6 +29,13 @@
 
         &.open {
             @include transform(translate3d(0, 0, 0));
+        }
+
+        @media (min-width: 769px) {
+            &,
+            &.open {
+                @include transform(translate3d(0, 0, 0));
+            }
         }
     }
 
@@ -46,5 +60,15 @@
         display: block;
         padding: em(15px) 0 em(15px) em(54px);
         text-decoration: none;
+    }
+
+    &__toggle {
+        i {
+            display: none;
+
+            @media (max-width: 768px) {
+                display: inline-block;
+            }
+        }
     }
 }
