@@ -7,7 +7,7 @@ export class MenuToggle {
 
     constructor(events) {
         this.events = events
-        this.open = (window.innerWidth > 768)
+        this.open = false
     }
 
     get open() {
