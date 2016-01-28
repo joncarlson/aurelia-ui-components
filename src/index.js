@@ -1,4 +1,7 @@
 let components = {
+    attributes: [
+        './attributes/auto-focus',
+    ],
     menu: [
         './components/menu/menu',
         './components/menu/menu-items',
