@@ -1,7 +1,7 @@
 System.register(['aurelia-framework', 'aurelia-event-aggregator'], function (_export) {
     'use strict';
 
-    var containerless, inject, EventAggregator, Menu;
+    var containerless, inject, inlineView, EventAggregator, Menu;
 
     function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 
@@ -9,6 +9,7 @@ System.register(['aurelia-framework', 'aurelia-event-aggregator'], function (_ex
         setters: [function (_aureliaFramework) {
             containerless = _aureliaFramework.containerless;
             inject = _aureliaFramework.inject;
+            inlineView = _aureliaFramework.inlineView;
         }, function (_aureliaEventAggregator) {
             EventAggregator = _aureliaEventAggregator.EventAggregator;
         }],
@@ -28,6 +29,7 @@ System.register(['aurelia-framework', 'aurelia-event-aggregator'], function (_ex
 
                 var _Menu = Menu;
                 Menu = inject(EventAggregator)(Menu) || Menu;
+                Menu = inlineView('\n<template>\n\t<nav class="menu menu--side" class.bind="open ? \'open\' : \'\'">\n\t\t<content></content>\n\t</nav>\n</template>\n')(Menu) || Menu;
                 Menu = containerless()(Menu) || Menu;
                 return Menu;
             })();

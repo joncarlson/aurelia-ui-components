@@ -1,7 +1,14 @@
-import {containerless, inject} from 'aurelia-framework'
+import {containerless, inject, inlineView} from 'aurelia-framework'
 import {EventAggregator} from 'aurelia-event-aggregator'
 
 @containerless()
+@inlineView(`
+<template>
+	<nav class="menu menu--side" class.bind="open ? 'open' : ''">
+		<content></content>
+	</nav>
+</template>
+`)
 @inject(EventAggregator)
 export class Menu {
 

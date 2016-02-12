@@ -25,6 +25,7 @@ var Menu = (function () {
 
     var _Menu = Menu;
     Menu = (0, _aureliaFramework.inject)(_aureliaEventAggregator.EventAggregator)(Menu) || Menu;
+    Menu = (0, _aureliaFramework.inlineView)('\n<template>\n\t<nav class="menu menu--side" class.bind="open ? \'open\' : \'\'">\n\t\t<content></content>\n\t</nav>\n</template>\n')(Menu) || Menu;
     Menu = (0, _aureliaFramework.containerless)()(Menu) || Menu;
     return Menu;
 })();

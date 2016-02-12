@@ -31,6 +31,7 @@ var MenuItem = (function () {
     }], null, _instanceInitializers);
 
     var _MenuItem = MenuItem;
+    MenuItem = (0, _aureliaFramework.inlineView)('\n<template>\n    <li class="menu__item">\n        <a class="menu__link" href.bind="item.url">\n            <i class="menu__icon" class.bind="item.iconClass"></i>\n            <span innerHtml.bind="item.title"></span>\n        </a>\n\n        <menu-items>\n            <menu-item repeat.for="link of item.links" item.bind="link"></menu-item>\n        </menu-items>\n    </li>\n</template>\n')(MenuItem) || MenuItem;
     MenuItem = (0, _aureliaFramework.containerless)()(MenuItem) || MenuItem;
     return MenuItem;
 })();

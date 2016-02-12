@@ -1,7 +1,7 @@
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
-  value: true
+    value: true
 });
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
@@ -9,13 +9,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 var _aureliaFramework = require('aurelia-framework');
 
 var MenuItems = (function () {
-  function MenuItems() {
-    _classCallCheck(this, _MenuItems);
-  }
+    function MenuItems() {
+        _classCallCheck(this, _MenuItems);
+    }
 
-  var _MenuItems = MenuItems;
-  MenuItems = (0, _aureliaFramework.containerless)()(MenuItems) || MenuItems;
-  return MenuItems;
+    var _MenuItems = MenuItems;
+    MenuItems = (0, _aureliaFramework.inlineView)('\n<template>\n    <ul class="menu__items">\n        <content></content>\n    </ul>\n</template>\n')(MenuItems) || MenuItems;
+    MenuItems = (0, _aureliaFramework.containerless)()(MenuItems) || MenuItems;
+    return MenuItems;
 })();
 
 exports.MenuItems = MenuItems;

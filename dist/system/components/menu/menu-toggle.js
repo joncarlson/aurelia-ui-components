@@ -1,7 +1,7 @@
-System.register(['aurelia-framework', 'aurelia-event-aggregator'], function (_export) {
+System.register(['aurelia-framework', 'aurelia-event-aggregator', 'cookies'], function (_export) {
     'use strict';
 
-    var containerless, inject, EventAggregator, MenuToggle;
+    var containerless, inject, inlineView, EventAggregator, Cookies, MenuToggle;
 
     var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
@@ -11,8 +11,11 @@ System.register(['aurelia-framework', 'aurelia-event-aggregator'], function (_ex
         setters: [function (_aureliaFramework) {
             containerless = _aureliaFramework.containerless;
             inject = _aureliaFramework.inject;
+            inlineView = _aureliaFramework.inlineView;
         }, function (_aureliaEventAggregator) {
             EventAggregator = _aureliaEventAggregator.EventAggregator;
+        }, function (_cookies) {
+            Cookies = _cookies['default'];
         }],
         execute: function () {
             MenuToggle = (function () {
@@ -21,6 +24,8 @@ System.register(['aurelia-framework', 'aurelia-event-aggregator'], function (_ex
 
                     this.events = events;
                     this.open = false;
+
+                    console.log('Cookie', Cookies);
                 }
 
                 _createClass(MenuToggle, [{
@@ -42,6 +47,7 @@ System.register(['aurelia-framework', 'aurelia-event-aggregator'], function (_ex
 
                 var _MenuToggle = MenuToggle;
                 MenuToggle = inject(EventAggregator)(MenuToggle) || MenuToggle;
+                MenuToggle = inlineView('\n<template>\n    <a href="javascript:;" class="menu__toggle" click.trigger="toggle()">\n        <i class="fa fa-bars"></i>\n        <content></content>\n    </a>\n</template>\n')(MenuToggle) || MenuToggle;
                 MenuToggle = containerless()(MenuToggle) || MenuToggle;
                 return MenuToggle;
             })();
