@@ -38,11 +38,9 @@ export class MenuToggle {
     }
 
     setMenuStateFromCookie() {
-        let cookie = document.cookie.replace(/(?:(?:^|.*;\s*)menuopen\s*\=\s*([^;]*).*$)|^.*$/, '$1');
+        let cookie = document.cookie.replace(/(?:(?:^|.*;\s*)menuopen\s*\=\s*([^;]*).*$)|^.*$/, '$1')
 
-        if (!cookie) return
-
-        this.open = cookie
+        this.open = (cookie && (cookie === true || cookie === 'true')) ? true : false
     }
 
 }
