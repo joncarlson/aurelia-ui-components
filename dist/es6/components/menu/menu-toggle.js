@@ -1,6 +1,5 @@
 import {containerless, inject, inlineView} from 'aurelia-framework'
 import {EventAggregator} from 'aurelia-event-aggregator'
-import Cookies from 'cookies'
 
 @containerless()
 @inlineView(`
@@ -14,12 +13,12 @@ import Cookies from 'cookies'
 @inject(EventAggregator)
 export class MenuToggle {
 
+    _open = false
+
     constructor(events) {
         this.events = events
-        this.open = false
 
-        // look in cookie
-        console.log('Cookie', Cookies)
+        this.setMenuStateFromCookie()
     }
 
     get open() {
@@ -30,10 +29,20 @@ export class MenuToggle {
         this._open = open
 
         this.events.publish('menu:toggle-open', this._open)
+
+        document.cookie = `menuopen=${this._open}`
     }
 
     toggle() {
         this.open = !this.open
+    }
+
+    setMenuStateFromCookie() {
+        let cookie = document.cookie.replace(/(?:(?:^|.*;\s*)menuopen\s*\=\s*([^;]*).*$)|^.*$/, '$1');
+
+        if (!cookie) return
+
+        this.open = cookie
     }
 
 }

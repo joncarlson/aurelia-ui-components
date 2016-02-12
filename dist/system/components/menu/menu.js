@@ -29,7 +29,7 @@ System.register(['aurelia-framework', 'aurelia-event-aggregator'], function (_ex
 
                 var _Menu = Menu;
                 Menu = inject(EventAggregator)(Menu) || Menu;
-                Menu = inlineView('\n<template>\n\t<nav class="menu menu--side" class.bind="open ? \'open\' : \'\'">\n\t\t<content></content>\n\t</nav>\n</template>\n')(Menu) || Menu;
+                Menu = inlineView('\n<template>\n\t<nav class="menu menu--side" class.bind="open === true ? \'open\' : \'\'">\n\t\t<content></content>\n\t</nav>\n</template>\n')(Menu) || Menu;
                 Menu = containerless()(Menu) || Menu;
                 return Menu;
             })();

@@ -1,7 +1,7 @@
-System.register(['aurelia-framework', 'aurelia-event-aggregator', 'cookies'], function (_export) {
+System.register(['aurelia-framework', 'aurelia-event-aggregator'], function (_export) {
     'use strict';
 
-    var containerless, inject, inlineView, EventAggregator, Cookies, MenuToggle;
+    var containerless, inject, inlineView, EventAggregator, MenuToggle;
 
     var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
@@ -14,24 +14,32 @@ System.register(['aurelia-framework', 'aurelia-event-aggregator', 'cookies'], fu
             inlineView = _aureliaFramework.inlineView;
         }, function (_aureliaEventAggregator) {
             EventAggregator = _aureliaEventAggregator.EventAggregator;
-        }, function (_cookies) {
-            Cookies = _cookies['default'];
         }],
         execute: function () {
             MenuToggle = (function () {
                 function MenuToggle(events) {
                     _classCallCheck(this, _MenuToggle);
 
-                    this.events = events;
-                    this.open = false;
+                    this._open = false;
 
-                    console.log('Cookie', Cookies);
+                    this.events = events;
+
+                    this.setMenuStateFromCookie();
                 }
 
                 _createClass(MenuToggle, [{
                     key: 'toggle',
                     value: function toggle() {
                         this.open = !this.open;
+                    }
+                }, {
+                    key: 'setMenuStateFromCookie',
+                    value: function setMenuStateFromCookie() {
+                        var cookie = document.cookie.replace(/(?:(?:^|.*;\s*)menuopen\s*\=\s*([^;]*).*$)|^.*$/, '$1');
+
+                        if (!cookie) return;
+
+                        this.open = cookie;
                     }
                 }, {
                     key: 'open',
@@ -42,6 +50,8 @@ System.register(['aurelia-framework', 'aurelia-event-aggregator', 'cookies'], fu
                         this._open = open;
 
                         this.events.publish('menu:toggle-open', this._open);
+
+                        document.cookie = 'menuopen=' + this._open;
                     }
                 }]);
 

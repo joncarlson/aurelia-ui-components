@@ -4,7 +4,7 @@ import {EventAggregator} from 'aurelia-event-aggregator'
 @containerless()
 @inlineView(`
 <template>
-	<nav class="menu menu--side" class.bind="open ? 'open' : ''">
+	<nav class="menu menu--side" class.bind="open === true ? 'open' : ''">
 		<content></content>
 	</nav>
 </template>

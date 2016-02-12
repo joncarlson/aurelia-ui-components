@@ -32,7 +32,7 @@ define(['exports', 'aurelia-framework', 'aurelia-event-aggregator'], function (e
             value: function push(open) {
                 this.element.className = this.element.className.replace(/(?:^|\s)menu-open(?!\S)/g, '');
 
-                if (open) this.element.className += ' menu-open';
+                if (open === true) this.element.className += ' menu-open';
             }
         }]);
 
